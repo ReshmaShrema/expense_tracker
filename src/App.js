@@ -4,7 +4,7 @@ function App() {
       <div className="App">
         <ExpenseItem/>
           <h2>Let's get started!</h2>
-      </div>
+  </div>
   );
 }
 
