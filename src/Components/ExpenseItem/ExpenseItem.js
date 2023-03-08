@@ -4,6 +4,7 @@ import Card from '../UI/Card/Card';
 import './ExpenseItem.css';
 const ExpenseItem=(props)=> {
     const [title,setTitle] = useState(props.title);
+    console.log('how many time this will executed?')
     const clickHandler=()=>{
         setTitle('Updated!!!')
         console.log('Clicked');
