@@ -1,6 +1,7 @@
 
+import React from 'react';
 import Expenses from './Components/Expenses/Expenses';
-function App() {
+const  App=()=> {
     const expenses = [
         {
             id: 'e1',
@@ -27,8 +28,9 @@ function App() {
             date: new Date(2021, 5, 12),
         },
     ];
+    //return(React.createElement('div',{},createElement(Expenses,{expenses:expenses})))
     return (
-        <div className="App">
+        <div >
             <Expenses expenses={expenses}/>
         </div>
     );
