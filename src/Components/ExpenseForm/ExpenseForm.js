@@ -1,19 +1,25 @@
 import React,{useState} from 'react';
 import './ExpenseForm.css';
 const ExpenseForm = () => {
-    const[enteredTitle,setEnteredTitle]=useState('');
-    const[enteredDate,setEnteredDate]=useState('');
-    const [enteredAmount, setEnteredAmount] = useState('');
+//      const[enteredTitle,setEnteredTitle]=useState('');
+//  const[enteredDate,setEnteredDate]=useState('');
+//      const [enteredAmount, setEnteredAmount] = useState('');
+    const[userInput,setUserInput]=useState({enteredTitle:'',enteredAmount:'',enteredDate:'',})
+    
     const titleChangeHandler=(e)=>{
-        setEnteredTitle(e.target.value)
+        // setEnteredTitle(e.target.value)
+        setUserInput({ ...userInput,enteredTitle: e.target.value});
         console.log(e.target.value);
     }
     const dateChangeHandler=(e)=>{
-        setEnteredDate(e.target.value)
+    // setEnteredDate(e.target.value)
+        setUserInput({...userInput,enteredDate:e.target.value})
         console.log(e.target.value);
     }
     const amountChangeHandler = (e) => {
-        setEnteredAmount(e.target.value);
+
+        // setEnteredAmount(e.target.value);
+        setUserInput({...userInput,enteredAmount:e.target.value})
         console.log(e.target.value);
     };
     return (
@@ -24,7 +30,7 @@ const ExpenseForm = () => {
                     <input
                         type="text"
                         onChange={titleChangeHandler}
-                        value={enteredTitle}
+                        value={userInput.enteredTitle}
                     />
                 </div>
                 <div className="new-expense__control">
@@ -34,7 +40,7 @@ const ExpenseForm = () => {
                         type="number"
                         min="0.01"
                         step="0.01"
-                        value={enteredAmount}
+                        value={userInput.enteredAmount}
                     />
                 </div>
                 <div className="new-expense__control">
@@ -43,7 +49,7 @@ const ExpenseForm = () => {
                         type="date"
                         min="2019-01-01"
                         max="20222-12-31"
-                        value={enteredDate}
+                        value={userInput.enteredDate}
                         onChange={dateChangeHandler}
                     />
                 </div>
