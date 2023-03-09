@@ -30,11 +30,13 @@ const  App=()=> {
         },
     ];
     //return(React.createElement('div',{},createElement(Expenses,{expenses:expenses})))
+    const addExpenseHandler = (expenses) => {
+        console.log(expenses);
+    };
     return (
-
-        <div >
-            <NewExpense/>
-            <Expenses expenses={expenses}/>
+        <div>
+            <NewExpense onAddExpense={addExpenseHandler}/>
+            <Expenses expenses={expenses} />
         </div>
     );
 }
