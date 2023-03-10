@@ -1,8 +1,6 @@
-
 import React, { useState } from 'react';
 import Expenses from './Components/Expenses/Expenses';
-import NewExpense from './Components/NewExpense/NewExpense';
-
+import NewExpense from './Components/NewExpenses/NewExpense/NewExpense';
 
 const DUMMY_EXPENSES = [
     {
@@ -30,24 +28,23 @@ const DUMMY_EXPENSES = [
         date: new Date(2021, 5, 12),
     },
 ];
-const  App=()=> {
+const App = () => {
     const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
-    
+
     //return(React.createElement('div',{},createElement(Expenses,{expenses:expenses})))
     //trigger whenever new expense is added
     const addExpenseHandler = (expense) => {
-        setExpenses((preState)=>{
-               return [ expense, ...preState];
-        })
+        setExpenses((preState) => {
+            return [expense, ...preState];
+        });
         console.log(expenses);
     };
     return (
         <div>
-            <NewExpense onAddExpense={addExpenseHandler}/>
+            <NewExpense onAddExpense={addExpenseHandler} />
             <Expenses expenses={expenses} />
         </div>
     );
-}
-
+};
 
 export default App;
